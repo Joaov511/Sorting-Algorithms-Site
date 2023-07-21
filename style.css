@@ -1,0 +1,259 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital@1&family=PT+Sans&family=Roboto:wght@300&display=swap');
+
+
+* {
+    margin: 0;
+    padding: 0;
+    
+}
+
+body {
+    transition: background 2s;
+}
+
+h1 {
+    display: flex;
+    justify-content: center;
+    font-family: 'Roboto', sans-serif;
+    margin-top: 1%;
+}
+
+#themeSwitch {
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    left: 96%;
+    top : 2%;
+}
+
+#themeSwitch:hover {
+    cursor: pointer;
+}
+
+@keyframes switchThemeAnim {
+    0% {
+        left: 96%;
+    }
+    20% {
+        left: 120%;
+    }
+    100% {
+        left: 96%;
+    }
+}
+
+@keyframes switchThemeAnim2 {
+    0% {
+        left: 96%;
+    }
+    20% {
+        left: 120%;
+    }
+    100% {
+        left: 96%;
+    }
+}
+
+#shuffleArray {
+    margin-top: 1%;
+    height: 3rem;
+    width: 8%;
+    border-radius: 15px;
+    background-color: rgba(0, 140, 200, 0.8);
+    color: white;
+    font-size: 1.2rem;
+    box-shadow: 3px 3px 4px #979696;
+    border: 1px solid rgba(0, 140, 200, 0.8);
+}
+
+button:active {
+    transform: translateY(2px)
+}
+
+#shuffleArray:hover {
+    background-color: rgb(4, 96, 136);
+    cursor: pointer;
+    
+}
+
+#chart {
+    margin-left: 20%;
+    margin-right: 20%;
+    margin-top: 1%;
+}
+
+#moves {
+    display: flex;
+    justify-content: center;
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.1rem;
+    font-weight: bold;
+    margin-bottom: 1%;
+}
+
+.range {
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.1rem;
+    font-weight: bold;
+    margin-top: 1%;
+}
+
+#rangeInput {
+    background: rgb(190, 188, 188);
+    border-radius: 10px;
+    -webkit-appearance: none;
+    overflow: hidden;
+    box-shadow:  inset 0 0 50px 20px rgba(0,0,0,0.8);
+    vertical-align: middle;
+    margin-left: 5px;
+    margin-right: 5px;
+    
+}
+
+#rangeInput::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 25px;
+    height: 20px;
+    border-radius: 4px;
+    background: white;
+}
+
+#rangeInput::-webkit-slider-runnable-track {
+    -webkit-appearance: none;
+    background: rgba(0, 140, 200, 0.8);
+    cursor: pointer;
+}
+
+.range label{
+    margin-left: 22.5%;
+}
+
+.selectOpt {
+    text-align: center;
+}
+
+.selectOpt label {
+    font-weight: bold;
+}
+
+
+#options{
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.1rem;
+    
+}
+
+#options select {
+    height: 2rem;
+    font-size: 1.1rem;
+    margin-bottom: 1%;
+}
+
+
+.centerBtn {
+    text-align: center;
+}
+
+#sortBtn {
+    height: 3rem;
+    width: 8%;
+    border-radius: 15px;
+    background-color: rgba(0, 140, 200, 0.8);
+    color: white;
+    font-size: 1.4rem;
+    box-shadow: 3px 3px 4px #979696;
+    border: 1px solid rgba(0, 140, 200, 0.8);
+}
+
+#sortBtn:hover {
+    background-color: rgb(4, 96, 136);
+    cursor: pointer;
+}
+
+
+@media screen and (min-width:1000px) and (max-width:1650px) {
+    #moves {
+        margin-top: 2%;
+    }
+    #chart {
+        margin-left: 15%;
+        margin-right: 15%;
+    }
+    #themeSwitch {
+        left: 94%;
+    }
+    #options select, #moves {
+        margin-bottom: 2%;
+    }
+    #sortBtn {
+        width: 12%;
+    }
+    #shuffleArray {
+        width: 12%;
+    }
+}
+
+@media  screen and (min-width:600px) and (max-width:1000px) {
+    #moves {
+        margin-top: 4%;
+    }
+    #options select, #moves {
+        margin-bottom: 4%;
+    }
+    .range label {
+        margin-left: 10%;
+    }
+    #chart {
+        margin-left: 8%;
+        margin-right: 8%; 
+    }
+    #themeSwitch {
+        left: 90%;
+    }
+    #sortBtn {
+        width: 17%;
+    }
+    #shuffleArray {
+        width: 17%;
+    }
+}
+
+@media screen and (max-width:600px) {
+    h1 {
+        margin-bottom: 6%;
+    }
+    #chart {
+        height: 60%;
+        margin-left: 2%;
+        margin-right: 2%;
+    }
+    #themeSwitch {
+        left: 87%;
+        width: 45px;
+        height: 45px;
+    }
+    #sortBtn {
+        width: 25%;
+    }
+    #shuffleArray {
+        width: 25%;
+        margin-bottom: 6%;
+    }
+    #moves {
+        margin-top: 10%;
+    }
+    #options select, #moves {
+        margin-bottom: 10%;
+    }
+    .range {
+        display: flex;
+        align-items: center;
+        margin-top: 10%;
+    }
+    .range input{
+        align-items: center;
+    }
+}
+
+
+    
