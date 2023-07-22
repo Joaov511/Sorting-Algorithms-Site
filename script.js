@@ -18,6 +18,7 @@ const backgroundColors = ['rgba(0, 140, 200, 0.8)','rgba(224, 34, 49, 0.8)']
 const config  = {
     type: "bar",
     options: {
+        maintainAspectRatio: true
     },
     data : {
         labels :newArray,
@@ -39,15 +40,19 @@ sortBtn.addEventListener('click',function() {
     }
 });
 
+function swap(array, i, k) {
+    const temp = array[i];
+    array[i] = array[k];
+    array[k] = temp;
+}
+
 async function bubbleSort() {
     let swaps = 0;
     
     for(let i = 0; i < newArray.length - 1; i++) {
         for(let k = 0; k < newArray.length - i - 1; k++) {
                 if(newArray[k] > newArray[k + 1]) {
-                    let temp = newArray[k];
-                    newArray[k] = newArray[k+1];
-                    newArray[k+1] = temp;
+                    swap(newArray, k, k + 1);
                     
                     chart.data.datasets[0].backgroundColor[k] = 'rgba(255, 0, 0, 1)';
                     chart.data.datasets[0].backgroundColor[k + 1] = 'rgba(255, 0, 0, 1)';
@@ -72,13 +77,13 @@ async function bubbleSort() {
 
 async function selectionSort() {
     let swaps = 0;
+    let temp = 0;
     
     for(let i = 0; i < newArray.length - 1; i++) {
         for(let k = i + 1; k < newArray.length ; k++) {
                 if(newArray[k] < newArray[i]) {
-                    let temp = newArray[i];
-                    newArray[i] = newArray[k];
-                    newArray[k] = temp;
+                    temp = newArray[i];
+                    swap(newArray, k, i);
                     
                     chart.data.datasets[0].backgroundColor[k] = 'rgba(255, 0, 0, 1)';
                     chart.data.datasets[0].backgroundColor[temp] = 'rgba(255, 0, 0, 1)';
@@ -131,6 +136,12 @@ shuffleBtn.addEventListener('click', function() {
 
 // Dark and light modes
 let isDarkMode = false;
+
+function resetAnimation(element) {
+    element.style.animation = "none";
+    void element.offsetWidth;
+}
+
 themeSwitch.addEventListener('click', function() {
         switch(isDarkMode) {
             case false : {
@@ -143,6 +154,7 @@ themeSwitch.addEventListener('click', function() {
                 sortBtn.style.boxShadow = "inset 3px 3px 18px rgba(5, 98, 138, 0.8)";
                 shuffleBtn.style.boxShadow = "inset 3px 3px 18px rgba(5, 98, 138, 0.8)";
                 
+                resetAnimation(themeSwitch);
                 themeSwitch.style.animation = "switchThemeAnim 0.9s linear";
                 themeSwitch.src = "light-mode.png";
                 isDarkMode = true;
@@ -158,12 +170,19 @@ themeSwitch.addEventListener('click', function() {
                 sortBtn.style.boxShadow = "3px 3px 4px #979696";
                 shuffleBtn.style.boxShadow = "3px 3px 4px #979696";
 
-                themeSwitch.style.animation = "switchThemeAnim2 0.9s linear";
+                resetAnimation(themeSwitch);
+                themeSwitch.style.animation = "switchThemeAnim 0.9s linear";
                 themeSwitch.src = "dark-mode.svg";
                 isDarkMode = false;
             }
         }
     
 })
+
+
+
+
+    
+
 
 
