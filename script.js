@@ -11,7 +11,8 @@ const shuffleBtn = document.getElementById('shuffleArray');
 const rangeInput = document.getElementById('rangeInput');
 const rangeValue = document.getElementById('rangeValue');
 const themeSwitch = document.getElementById("themeSwitch");
-
+const header = document.getElementById("header1");
+const headerItem1 = document.getElementById("headerItem1");
 
 //Chart
 const backgroundColors = ['rgba(0, 140, 200, 0.8)','rgba(224, 34, 49, 0.8)']
@@ -146,13 +147,16 @@ themeSwitch.addEventListener('click', function() {
         switch(isDarkMode) {
             case false : {
                 document.body.style.backgroundColor = "rgb(24,26,27)";
-                document.body.style.color = "rgb(236, 229, 229";
+                document.body.style.color = "rgb(236, 229, 229)";
     
-                sortType.style.color = "rgb(236, 229, 229";
+                sortType.style.color = "rgb(236, 229, 229)";
                 sortType.style.backgroundColor = "rgb(59,59,59)";
 
                 sortBtn.style.boxShadow = "inset 3px 3px 18px rgba(5, 98, 138, 0.8)";
                 shuffleBtn.style.boxShadow = "inset 3px 3px 18px rgba(5, 98, 138, 0.8)";
+
+                header.style.backgroundColor = "rgb(24,26,27)";
+                headerItem1.style.color = "rgb(236, 229, 229)";
                 
                 resetAnimation(themeSwitch);
                 themeSwitch.style.animation = "switchThemeAnim 0.9s linear";
@@ -169,6 +173,9 @@ themeSwitch.addEventListener('click', function() {
 
                 sortBtn.style.boxShadow = "3px 3px 4px #979696";
                 shuffleBtn.style.boxShadow = "3px 3px 4px #979696";
+
+                header.style.backgroundColor = "white";
+                headerItem1.style.color = "black";
 
                 resetAnimation(themeSwitch);
                 themeSwitch.style.animation = "switchThemeAnim 0.9s linear";
