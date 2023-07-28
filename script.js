@@ -1,6 +1,8 @@
+// Variables needed to initiate
 let numbers = [370, 20, 71, 115, 249, 775, 687, 966, 583, 161, 202, 977, 426, 800, 262, 591, 580, 217, 229, 279, 61, 520, 825, 774, 552, 983, 427, 241, 385, 347, 83, 978, 114, 269, 781, 269, 658, 806, 192, 577, 354, 920, 102, 166, 240, 237, 677, 769, 347, 303, 587, 398, 246, 32, 455, 458, 683, 858, 792, 940, 767, 996, 663, 172, 649, 481, 995, 51, 644, 747, 136, 45, 346, 811, 578, 426, 894, 256, 631, 56, 134, 247, 269, 725, 200, 626, 134, 93, 647, 955, 170, 88, 955, 375, 515, 411, 312, 838, 447, 570, 154, 775, 715, 802, 572, 849, 489, 599, 577, 888, 267, 143, 426, 982, 918, 509, 771, 953, 23, 334, 696, 327, 293, 47, 172, 845, 423, 296, 505, 430, 396, 23, 684, 695, 64, 625, 767, 328, 293, 677, 19, 438, 125, 116, 806, 759, 99, 721, 183, 2];
 let max = 90;
 let newArray = numbers.slice(0,max);
+let isSortingRunning = false;
 
 // HTML elements
 const canvas = document.getElementById("chart");
@@ -11,8 +13,6 @@ const shuffleBtn = document.getElementById('shuffleArray');
 const rangeInput = document.getElementById('rangeInput');
 const rangeValue = document.getElementById('rangeValue');
 const themeSwitch = document.getElementById("themeSwitch");
-const header = document.getElementById("header1");
-const headerItem1 = document.getElementById("headerItem1");
 
 //Chart
 const backgroundColors = ['rgba(0, 140, 200, 0.8)','rgba(224, 34, 49, 0.8)']
@@ -48,6 +48,9 @@ function swap(array, i, k) {
 }
 
 async function bubbleSort() {
+    if(isSortingRunning) return;
+    
+    isSortingRunning = true;
     let swaps = 0;
     
     for(let i = 0; i < newArray.length - 1; i++) {
@@ -71,12 +74,15 @@ async function bubbleSort() {
             
         }
     }
-    
+    isSortingRunning = false;
 
     
 }
 
 async function selectionSort() {
+    if(isSortingRunning) return;
+    
+    isSortingRunning = true;
     let swaps = 0;
     let temp = 0;
     
@@ -102,6 +108,7 @@ async function selectionSort() {
             
         }
     }
+    isSortingRunning = false;
 }
 
 // Input type range
