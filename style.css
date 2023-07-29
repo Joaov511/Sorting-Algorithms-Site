@@ -27,37 +27,46 @@ header {
     font-weight: bold;
 }
 
+
 ul {
     list-style-type: none;
 }
 
-header ul {
+header ul li {
+    font-size: 1.4rem;
     display: inline-block;
 }
 
-header ul li {
-    font-size: 1.4rem;
+header ul li a {
+    color: rgb(0, 0, 0);
+    padding-left: 35px;
 }
 
-header ul li a {
-    text-decoration: underline;
-    color: black;
+.notActive {
+    text-decoration: none;
 }
 
 #logo {
     width: 48px;
     height: 48px;
-    position: absolute;
-    left: 5px; 
     display: flex;
 }
 
 #companyName {
     font-size: 1.6rem;
     color: #918e8e;
-    position: absolute;
-    left: 70px; 
     display: flex;
+    padding-left: 8px;
+    
+}
+
+#entireLogo {
+    display: flex;
+    align-items: center;
+    position: absolute;
+    left: 10px;
+    
+    
 }
 
 #themeSwitch {
@@ -153,9 +162,11 @@ button:active {
 
 #rangeInput::-webkit-slider-runnable-track {
     -webkit-appearance: none;
-    background: rgba(0, 140, 200, 0.8);
     cursor: pointer;
+    background: transparent;
 }
+
+
 
 .range {
     margin-left: 22.5%;
@@ -201,6 +212,7 @@ button:active {
 #sortBtn:hover {
     background-color: rgb(4, 96, 136);
     cursor: pointer;
+    
 }
 
 
@@ -232,6 +244,19 @@ button:active {
 }
 
 @media  screen and (min-width:600px) and (max-width:1000px) {
+    header ul li {
+        font-size: 1.1rem;
+    }
+    header ul li a {
+        padding-left: 15px;
+    }
+    #logo {
+        width: 40px;
+        height: 40px;
+    }
+    #companyName {
+        font-size: 1.4rem;
+    }
     #moves {
         margin-top: 4%;
     }

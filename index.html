@@ -23,45 +23,50 @@
   </head>
   <body>
       
-      <header id="header1">
-        <img src="logo.png" alt="" id="logo">
-        <label id="companyName">AlgorithmVIS</label>
+      <header id="header">
+        <div id="entireLogo">
+          <img src="logo.png" alt="" id="logo">
+          <label id="companyName">AlgorithmVIS</label>
+        </div>
         
-        <ul>
-          <li><a href="index.html" id="headerItem1">Sort algorithms</a></li>
-        </ul>
-        
+        <nav>
+          <ul>
+            <li><a href="index.html" class="navItems">Sort algorithms</a></li>
+            <li><a href="" class="notActive navItems">Search algorithms</a></li>
+          </ul>
+        </nav>
         <img src="dark-mode.svg" alt="" id="themeSwitch">
       </header>
       
-      <div class="centerBtn">
-        <button id="shuffleArray">Shuffle Array</button>
-      </div>
-      
-      <canvas id="chart"></canvas>
-      
-      <div class="range">
+      <main>
+        <div class="centerBtn">
+          <button id="shuffleArray">Shuffle Array</button>
+        </div>
         
-        <label for="numberRange">Range of numbers: </label>
-        <input type="range" name="numberRange" min="15" max="150" step="15" id="rangeInput">
-        <span id="rangeValue"></span>
+        <canvas id="chart"></canvas>
         
-      </div>
-      
-      <span id="moves"></span>
-      
-      <div id="options" class="selectOpt">
-          <label for="typesOfSorts" >Sort method:</label>
-          <select name="typesOfSorts" id="sortType">
-              <option value="Bubble Sort">Bubble Sort</option>
-              <option value="Selection Sort">Selection Sort</option>
-          </select>
-      </div>
+        <div class="range">
+          
+          <label for="numberRange">Range of numbers: </label>
+          <input type="range" name="numberRange" min="15" max="150" step="15" id="rangeInput">
+          <span id="rangeValue"></span>
+          
+        </div>
+        
+        <span id="moves"></span>
+        
+        <div id="options" class="selectOpt">
+            <label for="typesOfSorts" >Sort method:</label>
+            <select name="typesOfSorts" id="sortType">
+                <option value="Bubble Sort">Bubble Sort</option>
+                <option value="Selection Sort">Selection Sort</option>
+            </select>
+        </div>
 
-      <div class="centerBtn">
-      <Button id="sortBtn">Sort</Button>
-      </div>
-
+        <div class="centerBtn">
+        <Button id="sortBtn">Sort</Button>
+        </div>
+      </main>
   
   </body>
 </html>

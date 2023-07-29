@@ -13,6 +13,8 @@ const shuffleBtn = document.getElementById('shuffleArray');
 const rangeInput = document.getElementById('rangeInput');
 const rangeValue = document.getElementById('rangeValue');
 const themeSwitch = document.getElementById("themeSwitch");
+const header = document.getElementById("header");
+const headerItems = document.getElementsByClassName("navItems");
 
 //Chart
 const backgroundColors = ['rgba(0, 140, 200, 0.8)','rgba(224, 34, 49, 0.8)']
@@ -150,6 +152,9 @@ function resetAnimation(element) {
     void element.offsetWidth;
 }
 
+
+
+
 themeSwitch.addEventListener('click', function() {
         switch(isDarkMode) {
             case false : {
@@ -163,7 +168,9 @@ themeSwitch.addEventListener('click', function() {
                 shuffleBtn.style.boxShadow = "inset 3px 3px 18px rgba(5, 98, 138, 0.8)";
 
                 header.style.backgroundColor = "rgb(24,26,27)";
-                headerItem1.style.color = "rgb(236, 229, 229)";
+                for(let i = 0; i < headerItems.length; i++) {
+                    headerItems[i].style.color = "rgb(236, 229, 229)";
+                }
                 
                 resetAnimation(themeSwitch);
                 themeSwitch.style.animation = "switchThemeAnim 0.9s linear";
@@ -182,7 +189,9 @@ themeSwitch.addEventListener('click', function() {
                 shuffleBtn.style.boxShadow = "3px 3px 4px #979696";
 
                 header.style.backgroundColor = "white";
-                headerItem1.style.color = "black";
+                for(let i = 0; i < headerItems.length; i++) {
+                    headerItems[i].style.color = "black";
+                }
 
                 resetAnimation(themeSwitch);
                 themeSwitch.style.animation = "switchThemeAnim 0.9s linear";
