@@ -1,10 +1,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato:ital@1&family=PT+Sans&family=Roboto:wght@300&display=swap');
 
+:root {
+    --blue: rgba(0, 140, 200, 0.8);
+    --darkModeBlack : rgb(24,26,27);
+    --darkModeText : rgb(236, 229, 229);
+}
+
 
 * {
     margin: 0;
     padding: 0;
-    
 }
 
 body {
@@ -153,8 +158,8 @@ button:active {
 
 #rangeInput::-webkit-slider-thumb {
     -webkit-appearance: none;
-    width: 27px; 
-    height: 27px;
+    width: 29px; 
+    height: 29px;
     border-radius: 50%;
     background: rgb(223, 213, 213);
     

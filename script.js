@@ -147,6 +147,24 @@ shuffleBtn.addEventListener('click', function() {
 // Dark and light modes
 let isDarkMode = false;
 
+if(window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+    document.body.style.backgroundColor = "var(--darkModeBlack)";
+    document.body.style.color = "var(--darkModeText)";
+
+    sortType.style.color = "rgb(236, 229, 229)";
+    sortType.style.backgroundColor = "rgb(59,59,59)";
+
+    sortBtn.style.boxShadow = "inset 3px 3px 18px rgba(5, 98, 138, 0.8)";
+    shuffleBtn.style.boxShadow = "inset 3px 3px 18px rgba(5, 98, 138, 0.8)";
+
+    header.style.backgroundColor = "rgb(24,26,27)";
+    for(let i = 0; i < headerItems.length; i++) {
+        headerItems[i].style.color = "rgb(236, 229, 229)";
+    }
+    themeSwitch.src = "light-mode.png";
+    isDarkMode = true;
+}
+
 function resetAnimation(element) {
     element.style.animation = "none";
     void element.offsetWidth;
@@ -158,8 +176,8 @@ function resetAnimation(element) {
 themeSwitch.addEventListener('click', function() {
         switch(isDarkMode) {
             case false : {
-                document.body.style.backgroundColor = "rgb(24,26,27)";
-                document.body.style.color = "rgb(236, 229, 229)";
+                document.body.style.backgroundColor = "var(--darkModeBlack)";
+                document.body.style.color = "var(--darkModeText)";
     
                 sortType.style.color = "rgb(236, 229, 229)";
                 sortType.style.backgroundColor = "rgb(59,59,59)";

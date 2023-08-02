@@ -24,6 +24,7 @@
   <body>
       
       <header id="header">
+        
         <div id="entireLogo">
           <img src="logo.png" alt="" id="logo">
           <label id="companyName">AlgorithmVIS</label>
@@ -35,7 +36,9 @@
             <li><a href="" class="notActive navItems">Search algorithms</a></li>
           </ul>
         </nav>
+
         <img src="dark-mode.svg" alt="" id="themeSwitch">
+
       </header>
       
       <main>
@@ -49,11 +52,11 @@
           
           <label for="numberRange">Range of numbers: </label>
           <input type="range" name="numberRange" min="15" max="150" step="15" id="rangeInput">
-          <span id="rangeValue"></span>
+          <label id="rangeValue"></label>
           
         </div>
         
-        <span id="moves"></span>
+        <p id="moves"></p>
         
         <div id="options" class="selectOpt">
             <label for="typesOfSorts" >Sort method:</label>
@@ -64,8 +67,9 @@
         </div>
 
         <div class="centerBtn">
-        <Button id="sortBtn">Sort</Button>
+          <Button id="sortBtn">Sort</Button>
         </div>
+
       </main>
   
   </body>
