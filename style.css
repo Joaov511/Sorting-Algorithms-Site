@@ -329,5 +329,28 @@ button:active {
     
 }
 
+@media (prefers-color-scheme: dark) {
+    body {
+        background-color: var(--darkModeBlack);
+        color: var(--darkModeText);
+    }
+    header {
+        background-color: var(--darkModeBlack);
+    }
+    header ul li a {
+        color: var(--darkModeText);
+    }
+    #sortType {
+        background-color: rgb(236, 229, 229);
+        color: white;
+    }
+    #shuffleArray {
+        box-shadow: none;
+    }
+    #sortBtn {
+        box-shadow: none;
+    }
+}
+
 
     
