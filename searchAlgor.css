@@ -97,113 +97,17 @@ header ul li a {
     }
 }
 
-#shuffleArray {
-    margin-top: 5%;
-    height: 3rem;
-    width: 8%;
-    border-radius: 10px;
-    background-color: rgba(0, 140, 200, 0.8);
-    color: white;
-    font-size: 1.2rem;
-    box-shadow: 3px 3px 4px #979696;
-    border: 1px solid rgba(0, 140, 200, 0.8);
-}
-
-button:active {
-    transform: translateY(2px)
-}
-
-#shuffleArray:hover {
-    background-color: rgb(4, 96, 136);
-    cursor: pointer;
-    
-}
-
 #chart {
     margin-left: 20%;
     margin-right: 20%;
-    margin-top: 1%;
+    margin-top: 5%;
 }
-
-#moves {
-    display: flex;
-    justify-content: center;
-    font-family: 'Roboto', sans-serif;
-    font-size: 1.1rem;
-    font-weight: bold;
-    margin-bottom: 1%;
-}
-
-.range {
-    font-family: 'Roboto', sans-serif;
-    font-size: 1.1rem;
-    font-weight: bold;
-    margin-top: 1%;
-}
-
-#rangeInput {
-    background: rgba(0, 140, 200, 0.8);
-    border-radius: 20px;
-    height: 30px;
-    -webkit-appearance: none;
-    overflow: hidden;
-    vertical-align: middle;
-    margin-left: 5px;
-    margin-right: 5px;
-    outline: none;
-    
-}
-
-
-
-#rangeInput::-webkit-slider-thumb {
-    -webkit-appearance: none;
-    width: 29px; 
-    height: 29px;
-    border-radius: 50%;
-    background: rgb(223, 213, 213);
-    
-}
-
-#rangeInput::-webkit-slider-runnable-track {
-    -webkit-appearance: none;
-    cursor: pointer;
-    background: transparent;
-}
-
-
-
-.range {
-    margin-left: 22.5%;
-}
-
-.selectOpt {
-    text-align: center;
-}
-
-.selectOpt label {
-    font-weight: bold;
-}
-
-
-#options{
-    font-family: 'Roboto', sans-serif;
-    font-size: 1.1rem;
-    
-}
-
-#options select {
-    height: 2rem;
-    font-size: 1.1rem;
-    margin-bottom: 1%;
-}
-
 
 .centerBtn {
     text-align: center;
 }
 
-#sortBtn {
+#searchBtn {
     height: 3rem;
     width: 8%;
     border-radius: 10px;
@@ -212,18 +116,30 @@ button:active {
     font-size: 1.4rem;
     box-shadow: 3px 3px 4px #979696;
     border: 1px solid rgba(0, 140, 200, 0.8);
+    margin-top: 2%;
 }
 
-#sortBtn:hover {
+button:active {
+    transform: translateY(2px)
+}
+
+#searchBtn:hover {
     background-color: rgb(4, 96, 136);
     cursor: pointer;
     
 }
 
-
+#position {
+    display: flex;
+    justify-content: center;
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.1rem;
+    font-weight: bold;
+    margin-top: 2%;
+}
 
 @media screen and (min-width:1000px) and (max-width:1650px) {
-    #moves {
+    #position {
         margin-top: 2%;
     }
     #chart {
@@ -233,18 +149,8 @@ button:active {
     #themeSwitch {
         left: 94%;
     }
-    #options select, #moves {
-        margin-bottom: 2%;
-    }
-    #sortBtn {
+    #searchBtn {
         width: 12%;
-    }
-    .range {
-        margin-left: 18%;
-    }
-    #shuffleArray {
-        width: 12%;
-        margin-top: 10%;
     }
 }
 
@@ -262,15 +168,8 @@ button:active {
     #companyName {
         font-size: 1.4rem;
     }
-    #moves {
+    #position {
         margin-top: 4%;
-    }
-    #options select, #moves {
-        margin-bottom: 4%;
-    }
-    .range {
-        margin-left: 0%;
-        text-align: center;
     }
     #chart {
         margin-left: 8%;
@@ -280,12 +179,8 @@ button:active {
     #themeSwitch {
         left: 90%;
     }
-    #sortBtn {
+    #searchBtn {
         width: 17%;
-    }
-    #shuffleArray {
-        width: 17%;
-        margin-top: 14%;
     }
 }
 
@@ -297,13 +192,7 @@ button:active {
     header ul li {
         display: none;
     }
-    #themeSwitch {
-        left: 87%;
-        width: 45px;
-        height: 45px;
-        
-    }
-    #sortBtn {
+    #searchBtn {
         width: 30%;
     }
     #shuffleArray {
@@ -311,22 +200,10 @@ button:active {
         margin-bottom: 6%;
         margin-top: 25%;
     }
-    #moves {
+    #position {
         margin-top: 10%;
         font-size: 1rem;
     }
-    #options select, #moves {
-        margin-bottom: 10%;
-        font-size: 1rem;
-    }
-    .range {
-        margin-top: 10%;
-        font-size: 1rem;
-        margin-left: 0%;
-        text-align: center;
-    }
-    
-    
 }
 
 @media (prefers-color-scheme: dark) {
@@ -340,17 +217,7 @@ button:active {
     header ul li a {
         color: var(--darkModeText);
     }
-    #sortType {
-        background-color: rgb(59,59,59);
-        color: white;
-    }
-    #shuffleArray {
-        box-shadow: none;
-    }
-    #sortBtn {
+    #searchBtn {
         box-shadow: none;
     }
 }
-
-
-    
