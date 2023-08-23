@@ -1,7 +1,6 @@
 let numbers = [2, 19, 20, 23, 23, 32, 45, 47, 51, 56, 61, 64, 71, 83, 88, 93, 99, 102, 114, 115, 116, 125, 134, 134, 136, 143, 154, 161, 166, 170, 172, 172, 183, 192, 200, 202, 217, 229, 237, 240, 241, 246, 247, 249, 256, 262, 267, 269, 269, 269, 279, 293, 293, 296, 303, 312, 327, 328, 334, 346, 347, 347, 354, 370, 375, 385, 396, 398, 411, 423, 426, 426, 426, 427, 430, 438, 447, 455, 458, 481, 489, 505, 509, 515, 520, 552, 570, 572, 577, 577, 578, 580, 583, 587, 591, 599, 625, 626, 631, 644, 647, 649, 658, 663, 677, 677, 683, 684, 687, 695, 696, 715, 721, 725, 747, 759, 767, 767, 769, 771, 774, 775, 775, 781, 792, 800, 802, 806, 806, 811, 825, 838, 845, 849, 858, 888, 894, 918, 920, 940, 953, 955, 955, 966, 977, 978, 982, 983, 995, 996];
-let max = 90;
 let newArray = numbers;
-//let newArray = numbers.slice(0,max);
+let searchNumber = randomNumberArray(newArray);
 
 const canvas = document.getElementById("chart");
 const searchBtn = document.getElementById("searchBtn");
@@ -9,11 +8,20 @@ const targetPosition = document.getElementById("position");
 const themeSwitch = document.getElementById("themeSwitch");
 const header = document.getElementById("header");
 const headerItems = document.getElementsByClassName("navItems");
+const targetNumber = document.getElementById("targetNumber");
+const targetNumberLabel = document.getElementById("targetNumberLabel")
+
+// Target number for search
+targetNumberLabel.innerHTML = `Selected target number for search : `;
+targetNumber.value = searchNumber;
+function randomNumberArray(array) {
+    let number = Math.round(Math.random() * 1000);
+    return number;
+}
 
 searchBtn.addEventListener("click",function() {
-    binarySearch(newArray,370);
-})
-
+    binarySearch(newArray,searchNumber);
+});
 
 const backgroundColors = ['rgba(0, 140, 200, 0.8)','rgba(224, 34, 49, 0.8)']
 const config  = {
@@ -63,6 +71,7 @@ async function binarySearch(arr, x) {
     }
 }
 
+
 //Dark and light mode toggle
 if(window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
     isDarkMode = true;
@@ -76,6 +85,8 @@ function resetAnimation(element) {
     void element.offsetWidth;
 }
 
+
+
 themeSwitch.addEventListener('click', function() {
         switch(isDarkMode) {
             case false : {
@@ -86,6 +97,9 @@ themeSwitch.addEventListener('click', function() {
                 for(let i = 0; i < headerItems.length; i++) {
                     headerItems[i].style.color = "rgb(236, 229, 229)";
                 }
+                targetNumber.style.backgroundColor = "rgb(12, 13, 14)";
+                targetNumber.style.color = "var(--darkModeText)";
+                targetNumber.style.boxShadow = "0 0 .4vw rgba(0,0,0,0.5), 0 0 0 .15vw transparent";
                 
                 resetAnimation(themeSwitch);
                 themeSwitch.style.animation = "switchThemeAnim 0.9s linear";
@@ -101,12 +115,16 @@ themeSwitch.addEventListener('click', function() {
                 for(let i = 0; i < headerItems.length; i++) {
                     headerItems[i].style.color = "black";
                 }
-
+                targetNumber.style.color = "black"
+                targetNumber.style.backgroundColor = "white";
+                targetNumber.style.boxShadow = 0;
+                
                 resetAnimation(themeSwitch);
                 themeSwitch.style.animation = "switchThemeAnim 0.9s linear";
                 themeSwitch.src = "dark-mode.svg";
                 isDarkMode = false;
             }
         }
+        
     
 })

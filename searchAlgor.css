@@ -100,7 +100,7 @@ header ul li a {
 #chart {
     margin-left: 20%;
     margin-right: 20%;
-    margin-top: 5%;
+    margin-top: 7%;
 }
 
 .centerBtn {
@@ -116,7 +116,7 @@ header ul li a {
     font-size: 1.4rem;
     box-shadow: 3px 3px 4px #979696;
     border: 1px solid rgba(0, 140, 200, 0.8);
-    margin-top: 2%;
+    margin-top: 1.5%;
 }
 
 button:active {
@@ -135,7 +135,46 @@ button:active {
     font-family: 'Roboto', sans-serif;
     font-size: 1.1rem;
     font-weight: bold;
-    margin-top: 2%;
+    margin-top: 1.5%;
+}
+
+/*.centerInput {
+    display: flex;
+    justify-content: center; 
+}*/
+
+#targetNumberLabel {
+    display: flex;
+    justify-content: center;
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.1rem;
+    font-weight: bold;
+    margin-top: 1.5%;
+}
+
+#targetNumber{
+    display: flex;
+    justify-content: center;
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.1rem;
+    font-weight: bold;
+    margin-top: 10px;
+    height: 15px;
+    padding: 10px;
+    margin-left: 42.8%;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.targetNumberDarkmode {
+    background-color: rgb(12, 13, 14);
+    color: var(--darkModeText);
+    border: 0;
+    box-shadow: 0 0 .4vw rgba(0,0,0,0.5), 0 0 0 .15vw transparent;
 }
 
 @media screen and (min-width:1000px) and (max-width:1650px) {
@@ -219,5 +258,11 @@ button:active {
     }
     #searchBtn {
         box-shadow: none;
+    }
+    #targetNumber {
+        background-color: rgb(12, 13, 14);
+        color: var(--darkModeText);
+        border: 0;
+        box-shadow: 0 0 .4vw rgba(0,0,0,0.5), 0 0 0 .15vw transparent;
     }
 }
