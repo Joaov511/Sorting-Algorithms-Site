@@ -16,6 +16,7 @@ const themeSwitch = document.getElementById("themeSwitch");
 const header = document.getElementById("header");
 const headerItems = document.getElementsByClassName("navItems");
 
+
 //Chart
 const backgroundColors = ['rgba(0, 140, 200, 0.8)','rgba(224, 34, 49, 0.8)']
 const config  = {
@@ -170,8 +171,9 @@ themeSwitch.addEventListener('click', function() {
                 sortType.style.color = "rgb(236, 229, 229)";
                 sortType.style.backgroundColor = "rgb(59,59,59)";
 
-                sortBtn.style.boxShadow = "inset 3px 3px 18px rgba(5, 98, 138, 0.8)";
-                shuffleBtn.style.boxShadow = "inset 3px 3px 18px rgba(5, 98, 138, 0.8)";
+                sortBtn.style.boxShadow = "1px 3px 18px #3a44d3";
+                shuffleBtn.style.boxShadow = "1px 3px 18px #3a44d3";
+                
 
                 header.style.backgroundColor = "rgb(24,26,27)";
                 for(let i = 0; i < headerItems.length; i++) {
@@ -194,6 +196,8 @@ themeSwitch.addEventListener('click', function() {
                 sortBtn.style.boxShadow = "3px 3px 4px #979696";
                 shuffleBtn.style.boxShadow = "3px 3px 4px #979696";
 
+                rangeInput.style.background = 'rgb(163, 161, 161)';
+
                 header.style.backgroundColor = "white";
                 for(let i = 0; i < headerItems.length; i++) {
                     headerItems[i].style.color = "black";
@@ -208,6 +212,38 @@ themeSwitch.addEventListener('click', function() {
     
 })
 
+
+function mouseInBtn(buttonName) {
+    if(isDarkMode) {
+        buttonName.style.backgroundColor = 'black';
+        buttonName.style.color = 'white';
+        buttonName.style.border = '1px solid black';
+    }
+    else {
+        buttonName.style.backgroundColor = 'white';
+        buttonName.style.color = '#2B39F0';
+        buttonName.style.border = '1px solid #2B39F0';
+    }
+}
+
+function mouseoutBtn(buttonName) {
+    if(isDarkMode) {
+        buttonName.style.backgroundColor = '#2B39F0';
+        buttonName.style.color = 'white';
+        buttonName.style.border = '1px solid #2B39F0';
+    }
+    else {
+        buttonName.style.backgroundColor = '#2B39F0';
+        buttonName.style.color = 'white';
+        buttonName.style.border = '1px solid #2B39F0';
+    }
+}
+
+shuffleBtn.addEventListener('mouseover',  mouseInBtn(shuffleBtn));
+shuffleBtn.addEventListener('mouseout', mouseoutBtn(shuffleBtn));
+
+sortBtn.addEventListener('mouseover', mouseInBtn(sortBtn));
+sortBtn.addEventListener('mouseout', mouseoutBtn(sortBtn));
 
 
 

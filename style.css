@@ -1,5 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato:ital@1&family=PT+Sans&family=Roboto:wght@300&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300&display=swap');
 :root {
     --blue: rgba(0, 140, 200, 0.8);
     --darkModeBlack : rgb(24,26,27);
@@ -62,7 +62,7 @@ header ul li a {
     color: #918e8e;
     display: flex;
     padding-left: 8px;
-    
+    font-family: 'Roboto Slab', serif;
 }
 
 #entireLogo {
@@ -101,22 +101,23 @@ header ul li a {
     margin-top: 5%;
     height: 3rem;
     width: 8%;
-    border-radius: 10px;
-    background-color: rgba(0, 140, 200, 0.8);
+    border-radius: 30px;
+    background-color: #2B39F0;
     color: white;
     font-size: 1.2rem;
     box-shadow: 3px 3px 4px #979696;
-    border: 1px solid rgba(0, 140, 200, 0.8);
+    border: 1px solid #2B39F0;
+    transition: 0.3s;
 }
 
 button:active {
     transform: translateY(2px)
 }
 
-#shuffleArray:hover {
-    background-color: rgb(4, 96, 136);
+button:hover {
+    background-color: gainsboro;
+    color: red;
     cursor: pointer;
-    
 }
 
 #chart {
@@ -129,6 +130,7 @@ button:active {
     display: flex;
     justify-content: center;
     font-family: 'Roboto', sans-serif;
+    font-weight: 200;
     font-size: 1.1rem;
     font-weight: bold;
     margin-bottom: 1%;
@@ -136,42 +138,37 @@ button:active {
 
 .range {
     font-family: 'Roboto', sans-serif;
+    font-weight: 200;
     font-size: 1.1rem;
     font-weight: bold;
     margin-top: 1%;
 }
 
+
+
 #rangeInput {
-    background: rgba(0, 140, 200, 0.8);
-    border-radius: 20px;
-    height: 30px;
+    background-color:  #3e4141;
+    border-radius: 10px;
+    height: 7px;
     -webkit-appearance: none;
-    overflow: hidden;
-    vertical-align: middle;
-    margin-left: 5px;
-    margin-right: 5px;
     outline: none;
-    
+    margin: 0px 15px 0px 15px;
 }
 
 
 
 #rangeInput::-webkit-slider-thumb {
     -webkit-appearance: none;
-    width: 29px; 
-    height: 29px;
-    border-radius: 50%;
-    background: rgb(223, 213, 213);
-    
+    width: 15px; 
+    height: 25px;
+    border-radius: 20%;
+    background: #1c5bc2;
 }
 
 #rangeInput::-webkit-slider-runnable-track {
     -webkit-appearance: none;
     cursor: pointer;
-    background: transparent;
 }
-
-
 
 .range {
     margin-left: 22.5%;
@@ -206,18 +203,19 @@ button:active {
 #sortBtn {
     height: 3rem;
     width: 8%;
-    border-radius: 10px;
-    background-color: rgba(0, 140, 200, 0.8);
+    border-radius: 30px;
+    background-color: #2B39F0;
     color: white;
     font-size: 1.4rem;
     box-shadow: 3px 3px 4px #979696;
-    border: 1px solid rgba(0, 140, 200, 0.8);
+    border: 1px solid #2B39F0;
+    transition: 0.3s;
 }
 
 #sortBtn:hover {
-    background-color: rgb(4, 96, 136);
+    background-color: white;
+    color: #2B39F0;
     cursor: pointer;
-    
 }
 
 
