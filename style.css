@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato:ital@1&family=PT+Sans&family=Roboto:wght@300&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@200;300&family=Merriweather:wght@300&display=swap');
 :root {
     --blue: rgba(0, 140, 200, 0.8);
     --darkModeBlack : rgb(24,26,27);
@@ -10,11 +11,13 @@
 * {
     margin: 0;
     padding: 0;
+    font-family: 'Roboto', sans-serif;
 }
 
 body {
     transition: background 2s;
     overflow-x: hidden;
+    height: 1800px;
 }
 
 header {
@@ -217,6 +220,50 @@ button:hover {
     color: #2B39F0;
     cursor: pointer;
 }
+
+
+#moreAbout div{
+    display: flex;
+    justify-content: center;
+    margin-top: 5rem;
+    font-size: 2rem;
+}
+
+#AlgorithmContent {
+    display: flex;
+}
+
+#AlgorithmContent blockquote{
+    padding-left: 9rem;
+    padding-right: 9rem;
+    font-size: 1.2rem;
+}
+
+#AlgorithmContent blockquote ul li {
+    margin-top: 1rem;
+}
+
+#AlgorithmContent  h2 {
+    margin-top: 3rem;
+    margin-bottom: 1rem;
+}
+
+#AlgorithmContent blockquote ul li::before {
+    content: "\2022";  
+    color: #2B39F0;
+    height: 2rem;
+    width: 2rem;
+    margin-right: 0.5rem;
+}
+
+#AlgorithmContent aside {
+    margin-right: 2rem;
+    margin-bottom: 10rem;
+}
+
+
+
+
 
 
 
