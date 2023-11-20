@@ -113,6 +113,7 @@ header ul li a {
     transition: 0.3s;
 }
 
+
 button:active {
     transform: translateY(2px)
 }
@@ -225,18 +226,20 @@ button:hover {
 #moreAbout div{
     display: flex;
     justify-content: center;
-    margin-top: 5rem;
+    margin-top: 3rem;
     font-size: 2rem;
 }
 
 #AlgorithmContent {
     display: flex;
+    
 }
 
 #AlgorithmContent blockquote{
     padding-left: 9rem;
     padding-right: 9rem;
     font-size: 1.2rem;
+    margin-top: 6rem;
 }
 
 #AlgorithmContent blockquote ul li {
@@ -256,15 +259,16 @@ button:hover {
     margin-right: 0.5rem;
 }
 
-#AlgorithmContent aside {
+#AlgorithmContent aside{
     margin-right: 2rem;
     margin-bottom: 10rem;
+    margin-top: 6rem;
 }
 
-
-
-
-
+#AlgorithmContent aside article {
+    font-size: 1.6rem;
+    margin-bottom: 0.5rem;
+}
 
 
 @media screen and (min-width:1000px) and (max-width:1650px) {

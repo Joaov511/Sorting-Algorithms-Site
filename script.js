@@ -147,19 +147,23 @@ shuffleBtn.addEventListener('click', function() {
 
 // Dark and light mode
 
-if(window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
-    isDarkMode = true;
+window.onload = function() {
+    if(window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        isDarkMode = true;
+        btnDarkMode(shuffleBtn);
+        btnDarkMode(sortBtn);
+    }
+    else {
+        isDarkMode = false;
+
+    }
 }
-else {
-    isDarkMode = false;
-}
+
 
 function resetAnimation(element) {
     element.style.animation = "none";
     void element.offsetWidth;
 }
-
-
 
 
 themeSwitch.addEventListener('click', function() {
@@ -212,38 +216,17 @@ themeSwitch.addEventListener('click', function() {
     
 })
 
+function btnDarkMode(buttonName) {
+    buttonName.style.backgroundColor = '#2B39F0';
+    buttonName.style.color = 'white';
+    buttonName.style.border = '1px solid #2B39F0';
+    buttonName.style.boxShadow = "1px 3px 18px #3a44d3";
 
-function mouseInBtn(buttonName) {
-    if(isDarkMode) {
-        buttonName.style.backgroundColor = 'black';
-        buttonName.style.color = 'white';
-        buttonName.style.border = '1px solid black';
-    }
-    else {
-        buttonName.style.backgroundColor = 'white';
-        buttonName.style.color = '#2B39F0';
-        buttonName.style.border = '1px solid #2B39F0';
-    }
 }
 
-function mouseoutBtn(buttonName) {
-    if(isDarkMode) {
-        buttonName.style.backgroundColor = '#2B39F0';
-        buttonName.style.color = 'white';
-        buttonName.style.border = '1px solid #2B39F0';
-    }
-    else {
-        buttonName.style.backgroundColor = '#2B39F0';
-        buttonName.style.color = 'white';
-        buttonName.style.border = '1px solid #2B39F0';
-    }
-}
 
-shuffleBtn.addEventListener('mouseover',  mouseInBtn(shuffleBtn));
-shuffleBtn.addEventListener('mouseout', mouseoutBtn(shuffleBtn));
 
-sortBtn.addEventListener('mouseover', mouseInBtn(sortBtn));
-sortBtn.addEventListener('mouseout', mouseoutBtn(sortBtn));
+
 
 
 
