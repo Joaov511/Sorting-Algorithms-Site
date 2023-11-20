@@ -15,7 +15,8 @@ const rangeValue = document.getElementById('rangeValue');
 const themeSwitch = document.getElementById("themeSwitch");
 const header = document.getElementById("header");
 const headerItems = document.getElementsByClassName("navItems");
-
+const bubbleSortText = document.getElementById('bubbleSort');
+const selectionSortText = document.getElementById('selectionSort');
 
 //Chart
 const backgroundColors = ['rgba(0, 140, 200, 0.8)','rgba(224, 34, 49, 0.8)']
@@ -144,6 +145,28 @@ shuffleBtn.addEventListener('click', function() {
     chart.update();
 });
 
+//Sort Type
+function moreAboutAnimation(sortAlgorithm) {
+    sortAlgorithm.style.animation = 'moreAboutfadeIn 0.5s linear';
+}
+
+
+function checkSortType() {
+    switch(sortType.value){
+        case "Bubble Sort":
+            selectionSortText.style.display = "none";
+            moreAboutAnimation(bubbleSortText);
+            bubbleSortText.style.display = 'block';
+        break;
+        case "Selection Sort":
+            bubbleSortText.style.display = 'none';
+            moreAboutAnimation(selectionSortText);
+            selectionSortText.style.display = "block";
+        break;
+        
+    }
+}
+sortType.addEventListener('change', checkSortType);
 
 // Dark and light mode
 

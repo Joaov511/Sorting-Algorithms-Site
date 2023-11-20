@@ -71,10 +71,43 @@
         </div>
 
       </main>
-      <section id="moreAbout">
+      
+      <section class="moreAbout" id="bubbleSort">
         <div><h1>BUBBLE SORT</h1></div>
         
-        <div id="AlgorithmContent">
+        <div class="AlgorithmContent">
+          <blockquote>
+            <ul>
+            <h2>Basic Principle:</h2>
+              <li>Selection sort is a comparison-based sorting algorithm.</li>
+              <li>It repeatedly divides the input list into two sections: sorted and unsorted.</li>
+            </ul>
+
+            <ul>
+              <h2>Efficiency and Complexity:</h2>
+              <li>Time Complexity: O(n^2), where 'n' is the number of elements in the list.</li>
+              <li>Its efficiency diminishes significantly with larger datasets due to its quadratic time complexity.</li>
+            </ul>
+
+            <ul>
+              <h2>Iterative Process:</h2>
+              <li>Selection sort iterates through the unsorted section to find the minimum (or maximum) element.</li>
+              <li>The smallest (or largest) element is then swapped with the first unsorted element, expanding the sorted section.</li>
+              <li>Each iteration increases the size of the sorted section and reduces the unsorted section until the entire list is sorted</li>
+            </ul>
+
+          </blockquote>
+          <aside>
+            <article>Example of implementation in Javascript</article>
+            <img src="bubbleSortExample.png" alt="">
+          </aside>
+        </div>
+      </section>
+      
+      <section class="moreAbout" id="selectionSort">
+        <div><h1>SELECTION SORT</h1></div>
+        
+        <div class="AlgorithmContent" >
           <blockquote>
             <ul>
             <h2>Basic Principle:</h2>
@@ -97,9 +130,10 @@
           </blockquote>
           <aside>
             <article>Example of implementation in Javascript</article>
-            <img src="Screenshot 2023-11-16 155559.png" alt="">
+            <img src="selectionSortExample.png" alt="">
           </aside>
         </div>
       </section>
+
   </body>
 </html>

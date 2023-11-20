@@ -223,35 +223,46 @@ button:hover {
 }
 
 
-#moreAbout div{
+.moreAbout {
+    background-color: rgb(32, 32, 32);
+    width: 90%;
+    border-radius: 15px;
+    margin-left: 5%;
+    margin-right: 5%;
+    height: auto;
+    margin-bottom: 4rem;
+}
+
+.moreAbout div{
     display: flex;
     justify-content: center;
     margin-top: 3rem;
     font-size: 2rem;
+    padding-top: 1rem;
 }
 
-#AlgorithmContent {
+.AlgorithmContent {
     display: flex;
     
 }
 
-#AlgorithmContent blockquote{
+.AlgorithmContent blockquote{
     padding-left: 9rem;
     padding-right: 9rem;
     font-size: 1.2rem;
     margin-top: 6rem;
 }
 
-#AlgorithmContent blockquote ul li {
+.AlgorithmContent blockquote ul li {
     margin-top: 1rem;
 }
 
-#AlgorithmContent  h2 {
+.AlgorithmContent  h2 {
     margin-top: 3rem;
     margin-bottom: 1rem;
 }
 
-#AlgorithmContent blockquote ul li::before {
+.AlgorithmContent blockquote ul li::before {
     content: "\2022";  
     color: #2B39F0;
     height: 2rem;
@@ -259,15 +270,27 @@ button:hover {
     margin-right: 0.5rem;
 }
 
-#AlgorithmContent aside{
+.AlgorithmContent aside{
     margin-right: 2rem;
-    margin-bottom: 10rem;
     margin-top: 6rem;
 }
 
-#AlgorithmContent aside article {
+.AlgorithmContent aside article {
     font-size: 1.6rem;
     margin-bottom: 0.5rem;
+}
+
+#selectionSort {
+    display: none;
+}
+
+@keyframes moreAboutfadeIn {
+    0% {
+        opacity: 0%;
+    }
+    100% {
+        opacity: 100%;
+    }
 }
 
 
