@@ -17,6 +17,7 @@ const header = document.getElementById("header");
 const headerItems = document.getElementsByClassName("navItems");
 const bubbleSortText = document.getElementById('bubbleSort');
 const selectionSortText = document.getElementById('selectionSort');
+const moreAboutElements = document.getElementsByClassName('moreAbout');
 
 //Chart
 const backgroundColors = ['rgba(0, 140, 200, 0.8)','rgba(224, 34, 49, 0.8)']
@@ -150,7 +151,6 @@ function moreAboutAnimation(sortAlgorithm) {
     sortAlgorithm.style.animation = 'moreAboutfadeIn 0.5s linear';
 }
 
-
 function checkSortType() {
     switch(sortType.value){
         case "Bubble Sort":
@@ -178,7 +178,6 @@ window.onload = function() {
     }
     else {
         isDarkMode = false;
-
     }
 }
 
@@ -188,13 +187,13 @@ function resetAnimation(element) {
     void element.offsetWidth;
 }
 
-
 themeSwitch.addEventListener('click', function() {
         switch(isDarkMode) {
             case false : {
                 document.body.style.backgroundColor = "var(--darkModeBlack)";
                 document.body.style.color = "var(--darkModeText)";
-    
+                
+                
                 sortType.style.color = "rgb(236, 229, 229)";
                 sortType.style.backgroundColor = "rgb(59,59,59)";
 
@@ -206,6 +205,10 @@ themeSwitch.addEventListener('click', function() {
                 for(let i = 0; i < headerItems.length; i++) {
                     headerItems[i].style.color = "rgb(236, 229, 229)";
                 }
+
+                for(let i = 0; i < moreAboutElements.length; i++) {
+                    moreAboutElements[i].style.backgroundColor = 'rgb(32, 32, 32)';
+                }
                 
                 resetAnimation(themeSwitch);
                 themeSwitch.style.animation = "switchThemeAnim 0.9s linear";
@@ -216,7 +219,7 @@ themeSwitch.addEventListener('click', function() {
             case true : {
                 document.body.style.backgroundColor = "white";
                 document.body.style.color = "black";
-    
+                
                 sortType.style.color = "black";
                 sortType.style.backgroundColor = "white";
 
@@ -228,6 +231,10 @@ themeSwitch.addEventListener('click', function() {
                 header.style.backgroundColor = "white";
                 for(let i = 0; i < headerItems.length; i++) {
                     headerItems[i].style.color = "black";
+                }
+
+                for(let i = 0; i < moreAboutElements.length; i++) {
+                    moreAboutElements[i].style.backgroundColor = 'white';
                 }
 
                 resetAnimation(themeSwitch);
