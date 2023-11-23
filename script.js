@@ -3,6 +3,7 @@ let numbers = [370, 20, 71, 115, 249, 775, 687, 966, 583, 161, 202, 977, 426, 80
 let max = 90;
 let newArray = numbers.slice(0,max);
 let isSortingRunning = false;
+let isDarkMode = '';
 
 // HTML elements
 const canvas = document.getElementById("chart");
@@ -40,7 +41,7 @@ sortBtn.addEventListener('click',function() {
             bubbleSort();
         break;
         case "Selection Sort": 
-            selectionSort();
+            selectionSort(newArray);
         break;
         
     }
@@ -50,6 +51,20 @@ function swap(array, i, k) {
     const temp = array[i];
     array[i] = array[k];
     array[k] = temp;
+    return array;
+}
+
+async function colorChangingChart(position1,position2) {
+    chart.data.datasets[0].backgroundColor[position1] = 'rgba(255, 0, 0, 1)';
+    chart.data.datasets[0].backgroundColor[position2] = 'rgba(255, 0, 0, 1)';
+    chart.update();
+    
+    await new Promise(resolve => setTimeout(resolve, 100));
+    
+    chart.data.datasets[0].backgroundColor[position1] = 'rgba(54, 162, 235, 0.8)';
+    chart.data.datasets[0].backgroundColor[position2] = 'rgba(54, 162, 235, 0.8)';
+    
+    chart.update();
 }
 
 async function bubbleSort() {
@@ -62,59 +77,37 @@ async function bubbleSort() {
         for(let k = 0; k < newArray.length - i - 1; k++) {
                 if(newArray[k] > newArray[k + 1]) {
                     swap(newArray, k, k + 1);
-                    
-                    chart.data.datasets[0].backgroundColor[k] = 'rgba(255, 0, 0, 1)';
-                    chart.data.datasets[0].backgroundColor[k + 1] = 'rgba(255, 0, 0, 1)';
-                    chart.update();
-                    
-                    await new Promise(resolve => setTimeout(resolve, 150));
-                    
-                    chart.data.datasets[0].backgroundColor[k] = 'rgba(54, 162, 235, 0.8)';
-                    chart.data.datasets[0].backgroundColor[k + 1] = 'rgba(54, 162, 235, 0.8)';
-                    
+                    await colorChangingChart(k,k+1);
                     numberOfMoves.innerHTML = `Number of swaps : ${swaps}`;
                     swaps++;
                     chart.update();
                 }
-            
         }
     }
     isSortingRunning = false;
-
-    
 }
 
-async function selectionSort() {
+async function selectionSort(array) {
     if(isSortingRunning) return;
     
     isSortingRunning = true;
     let swaps = 0;
     let temp = 0;
     
-    for(let i = 0; i < newArray.length - 1; i++) {
-        for(let k = i + 1; k < newArray.length ; k++) {
-                if(newArray[k] < newArray[i]) {
-                    temp = newArray[i];
-                    swap(newArray, k, i);
-                    
-                    chart.data.datasets[0].backgroundColor[k] = 'rgba(255, 0, 0, 1)';
-                    chart.data.datasets[0].backgroundColor[temp] = 'rgba(255, 0, 0, 1)';
-                    chart.update();
-                    
-                    await new Promise(resolve => setTimeout(resolve, 150));
-                    
-                    chart.data.datasets[0].backgroundColor[k] = 'rgba(54, 162, 235, 0.8)';
-                    chart.data.datasets[0].backgroundColor[temp] = 'rgba(54, 162, 235, 0.8)';
-                    
+    for(let i = 0; i < array.length - 1; i++) {
+        for(let k = i + 1; k < array.length ; k++) {
+                if(array[k] < array[i]) {
+                    temp = array[i];
+                    swap(array, k, i);
+                    await colorChangingChart(k,temp);
                     numberOfMoves.innerHTML = `Number of swaps : ${swaps}`;
                     swaps++;
-                    chart.update();
                 }
-            
         }
     }
     isSortingRunning = false;
 }
+
 
 // Input type range
 rangeValue.textContent = rangeInput.value;
@@ -253,14 +246,4 @@ function btnDarkMode(buttonName) {
     buttonName.style.boxShadow = "1px 3px 18px #3a44d3";
 
 }
-
-
-
-
-
-
-
-    
-
-
 
