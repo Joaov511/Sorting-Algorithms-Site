@@ -205,7 +205,7 @@ themeSwitch.addEventListener('click', function() {
                 
                 resetAnimation(themeSwitch);
                 themeSwitch.style.animation = "switchThemeAnim 0.9s linear";
-                themeSwitch.src = "light-mode.png";
+                themeSwitch.src = "assets/light-mode.png";
                 isDarkMode = true;
             }
             break;
@@ -232,7 +232,7 @@ themeSwitch.addEventListener('click', function() {
 
                 resetAnimation(themeSwitch);
                 themeSwitch.style.animation = "switchThemeAnim 0.9s linear";
-                themeSwitch.src = "dark-mode.svg";
+                themeSwitch.src = "assets/dark-mode.svg";
                 isDarkMode = false;
             }
         }

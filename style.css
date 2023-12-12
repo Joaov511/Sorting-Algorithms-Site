@@ -374,7 +374,7 @@ button:hover {
         display: none;
     }
     #themeSwitch {
-        left: 87%;
+        left: 80%;
         width: 45px;
         height: 45px;
         
@@ -385,7 +385,7 @@ button:hover {
     #shuffleArray {
         width: 30%;
         margin-bottom: 6%;
-        margin-top: 17%;
+        margin-top: 24%;
     }
     #moves {
         margin-top: 10%;
@@ -407,6 +407,13 @@ button:hover {
     }
     .AlgorithmContent aside{
         display: none;
+    }
+    .moreAbout h1 {
+        font-size: 1.8rem;
+    }
+    .AlgorithmContent blockquote{
+        padding-left: 6rem;
+        padding-right: 6rem;
     }
     
 }
