@@ -9,18 +9,19 @@ const themeSwitch = document.getElementById("themeSwitch");
 const header = document.getElementById("header");
 const headerItems = document.getElementsByClassName("navItems");
 const targetNumber = document.getElementById("targetNumber");
-const targetNumberLabel = document.getElementById("targetNumberLabel")
+const targetNumberLabel = document.getElementById("targetNumberLabel");
 
 // Target number for search
 targetNumberLabel.innerHTML = `Selected target number for search : `;
 targetNumber.value = searchNumber;
 function randomNumberArray(array) {
-    let number = Math.round(Math.random() * 1000);
-    return number;
+    let number = Math.round(Math.random() * 150);
+    return newArray[number];
 }
 
 searchBtn.addEventListener("click",function() {
-    binarySearch(newArray,searchNumber);
+    //binarySearch(newArray,searchNumber);
+    linearSearch(newArray,searchNumber);    
 });
 
 const backgroundColors = ['rgba(0, 140, 200, 0.8)','rgba(224, 34, 49, 0.8)']
@@ -36,6 +37,30 @@ const config  = {
 };
 let chart = new Chart(canvas, config);
 
+async function chartColorChange(position1,position2,position3) {
+    const redColor = "rgba(255, 0, 0, 1)";
+    const defaultColor = "rgba(54, 162, 235, 0.8)";
+    
+    if(position3 === 'undefined') {
+        chart.data.datasets[0].backgroundColor[position1] = redColor;
+        chart.data.datasets[0].backgroundColor[position2] = redColor;
+        chart.update();
+        await new Promise(resolve => setTimeout(resolve, 400));
+        chart.data.datasets[0].backgroundColor[position1] = defaultColor;
+        chart.data.datasets[0].backgroundColor[position2] = defaultColor;
+    }
+    else {
+        chart.data.datasets[0].backgroundColor[position1] = redColor;
+        chart.data.datasets[0].backgroundColor[position2] = redColor;
+        chart.data.datasets[0].backgroundColor[position3] = redColor;
+        chart.update();
+        await new Promise(resolve => setTimeout(resolve, 400));
+        chart.data.datasets[0].backgroundColor[position1] = defaultColor;
+        chart.data.datasets[0].backgroundColor[position2] = defaultColor;
+        chart.data.datasets[0].backgroundColor[position3] = defaultColor;
+    }
+}
+
 async function binarySearch(arr, x) {
     let l = 0;
     let r = arr.length - 1;
@@ -45,18 +70,9 @@ async function binarySearch(arr, x) {
     
     while (r >= l) {
         mid = l + Math.floor((r - l) / 2);
-        chart.data.datasets[0].backgroundColor[l] = redColor;
-        chart.data.datasets[0].backgroundColor[r] = redColor;
-        chart.data.datasets[0].backgroundColor[mid] = redColor;
-        chart.update();
-        
-        await new Promise(resolve => setTimeout(resolve, 400));
-
-        chart.data.datasets[0].backgroundColor[l] = defaultColor;
-        chart.data.datasets[0].backgroundColor[r] = defaultColor;
-        chart.data.datasets[0].backgroundColor[mid] = defaultColor;
         targetPosition.innerHTML = `Position of the target number on the Array: ${mid + 1}`;
         chart.update();
+        await chartColorChange(l,mid,r);
         
         if (arr[mid] == x) {
             targetPosition.innerHTML = `Position of the target number on the Array: ${mid + 1}`;
@@ -68,6 +84,24 @@ async function binarySearch(arr, x) {
             l = mid + 1;
         }
         
+    }
+}
+
+
+async function linearSearch(arr,x) {
+    const redColor = "rgba(255, 0, 0, 1)";
+    const defaultColor = "rgba(54, 162, 235, 0.8)";
+    for(let i = 0; i < arr.length; i++) {
+        chart.data.datasets[0].backgroundColor[i] = redColor;
+        chart.update();
+        await new Promise(resolve => setTimeout(resolve, 50));
+        if(arr[i] == x){
+            targetPosition.innerHTML = `Position of the target number on the Array: ${i}`;
+        }
+        else {
+            chart.data.datasets[0].backgroundColor[i] = defaultColor;
+            chart.update();
+        }
     }
 }
 
