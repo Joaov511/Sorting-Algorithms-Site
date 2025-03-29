@@ -1,9 +1,7 @@
-let array;
-await fetch("../array.json").then((res) => res.json())
-.then((data) => {
-array = data;
-})
+import { fetchJSON } from './fetchJSON.js';
 import { initChart } from './chart.js';
+
+let array = await fetchJSON('../array.json');
 let newArray = array.sortedNumbers;
 const chart = initChart(newArray);
 let searchNumber = randomNumberArray(newArray);

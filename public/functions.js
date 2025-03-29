@@ -15,6 +15,5 @@ function shuffle(array) {
     return array;
 }
 
-
 module.exports.swap = swap;
 module.exports.shuffle = shuffle;
