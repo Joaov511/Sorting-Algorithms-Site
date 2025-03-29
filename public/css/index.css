@@ -1,0 +1,326 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital@1&family=PT+Sans&family=Roboto:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@200;300&family=Merriweather:wght@300&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+}
+
+body {
+    transition: background 2s;
+    overflow-x: hidden;
+    height: 2400px;
+}
+
+#themeSwitch {
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    right: 5px;
+}
+
+#themeSwitch:hover {
+    cursor: pointer;
+}
+
+#shuffleArray {
+    margin-top: 7rem;
+}
+
+#shuffleArray:hover {
+    background-color: white;
+    color: #343A40;
+    cursor: pointer;
+}
+
+button:active {
+    transform: translateY(2px)
+}
+
+#chart {
+    margin-left: 20%;
+    margin-right: 20%;
+    margin-top: 1%;
+}
+
+#moves {
+    display: flex;
+    justify-content: center;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 200;
+    font-size: 1.1rem;
+    font-weight: bold;
+    margin-bottom: 1%;
+}
+
+.range {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 200;
+    font-size: 1.1rem;
+    font-weight: bold;
+    margin-top: 1%;
+}
+
+#rangeInput {
+    background-color:  #3e4141;
+    border-radius: 10px;
+    height: 7px;
+    -webkit-appearance: none;
+    outline: none;
+    margin: 0px 15px 0px 15px;
+}
+
+#rangeInput::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 15px; 
+    height: 25px;
+    border-radius: 20%;
+    background: #1c5bc2;
+}
+
+#rangeInput::-webkit-slider-runnable-track {
+    -webkit-appearance: none;
+    cursor: pointer;
+}
+
+.range {
+    margin-left: 22.5%;
+}
+
+.selectOpt {
+    text-align: center;
+}
+
+.selectOpt label {
+    font-weight: bold;
+}
+
+#options{
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.1rem;
+    
+}
+
+#options select {
+    height: 2rem;
+    font-size: 1.1rem;
+    margin-bottom: 1%;
+}
+
+.centerBtn {
+    text-align: center;
+}
+
+#sortBtn {
+    margin-top: 1rem;
+}
+
+#sortBtn:hover {
+    background-color: white;
+    color: #343A40;
+    cursor: pointer;
+}
+
+.moreAbout {
+    background-color: white;
+    width: 90%;
+    border-radius: 15px;
+    margin-left: 5%;
+    margin-right: 5%;
+    height: auto;
+    margin-bottom: 4rem;
+}
+
+.moreAbout div{
+    display: flex;
+    justify-content: center;
+    margin-top: 3rem;
+    font-size: 2rem;
+    padding-top: 1rem;
+}
+
+.AlgorithmContent {
+    display: flex;
+}
+
+.AlgorithmContent blockquote{
+    padding-left: 9rem;
+    padding-right: 9rem;
+    font-size: 1.2rem;
+    margin-top: 6rem;
+}
+
+.AlgorithmContent blockquote ul li {
+    margin-top: 1rem;
+}
+
+.AlgorithmContent  h2 {
+    margin-top: 3rem;
+    margin-bottom: 1rem;
+}
+
+.AlgorithmContent blockquote ul li::before {
+    content: "\2022";  
+    color: #2B39F0;
+    height: 2rem;
+    width: 2rem;
+    margin-right: 0.5rem;
+}
+
+.AlgorithmContent aside{
+    margin-right: 2rem;
+    margin-top: 6rem;
+}
+
+.AlgorithmContent aside article {
+    font-size: 1.6rem;
+    margin-bottom: 0.5rem;
+}
+
+#selectionSort {
+    display: none;
+}
+
+.mb-3 {
+    border: 1px solid black;
+}
+
+@keyframes moreAboutfadeIn {
+    0% {
+        opacity: 0%;
+    }
+    100% {
+        opacity: 100%;
+    }
+}
+
+
+@media screen and (min-width:1000px) and (max-width:1650px) {
+    #moves {
+        margin-top: 2%;
+    }
+    #chart {
+        margin-left: 15%;
+        margin-right: 15%;
+    }
+    #themeSwitch {
+        left: 94%;
+    }
+    #options select, #moves {
+        margin-bottom: 2%;
+    }
+    #sortBtn {
+        width: 12%;
+    }
+    .range {
+        margin-left: 18%;
+    }
+    #shuffleArray {
+        width: 12%;
+        margin-top: 7%;
+    }
+}
+
+@media  screen and (min-width:600px) and (max-width:1000px) {
+    header ul li {
+        font-size: 1.1rem;
+    }
+    header ul li a {
+        padding-left: 15px;
+    }
+    #logo {
+        width: 40px;
+        height: 40px;
+    }
+    #companyName {
+        font-size: 1.4rem;
+    }
+    #moves {
+        margin-top: 4%;
+    }
+    #options select, #moves {
+        margin-bottom: 4%;
+    }
+    .range {
+        margin-left: 0%;
+        text-align: center;
+    }
+    #chart {
+        margin-left: 8%;
+        margin-right: 8%; 
+        margin-top: 5%;
+    }
+    #themeSwitch {
+        left: 90%;
+    }
+    #sortBtn {
+        width: 17%;
+    }
+    #shuffleArray {
+        width: 20%;
+        margin-top: 14%;
+    }
+    .AlgorithmContent aside img{
+        width: 200px;
+        height: 300px;
+        
+    }
+}
+
+@media screen and (max-width:600px) {
+    #chart {
+        margin-left: 2%;
+        margin-right: 2%;
+    }
+    header ul li {
+        display: none;
+    }
+    #themeSwitch {
+        left: 80%;
+        width: 45px;
+        height: 45px;
+        
+    }
+    #sortBtn {
+        width: 30%;
+    }
+    #shuffleArray {
+        width: 30%;
+        margin-bottom: 6%;
+        margin-top: 24%;
+    }
+    #moves {
+        margin-top: 10%;
+        font-size: 1rem;
+    }
+    #options select, #moves {
+        margin-bottom: 10%;
+        font-size: 1rem;
+    }
+    .range {
+        margin-top: 10%;
+        font-size: 1rem;
+        margin-left: 0%;
+        text-align: center;
+    }
+    .AlgorithmContent blockquote {
+        margin-top: 0.3rem;
+        padding-bottom: 2rem;
+    }
+    .AlgorithmContent aside{
+        display: none;
+    }
+    .moreAbout h1 {
+        font-size: 1.8rem;
+    }
+    .AlgorithmContent blockquote{
+        padding-left: 6rem;
+        padding-right: 6rem;
+    }
+    
+}
+
+
+    

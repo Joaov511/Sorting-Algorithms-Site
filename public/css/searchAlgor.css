@@ -1,0 +1,201 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital@1&family=PT+Sans&family=Roboto:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@200;300&family=Merriweather:wght@300&display=swap');
+
+:root {
+    --blue: rgba(0, 140, 200, 0.8);
+    --darkModeBlack : rgb(24,26,27);
+    --darkModeText : rgb(236, 229, 229);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif
+}
+
+body {
+    transition: background 2s;
+    overflow-x: hidden;
+}
+
+#themeSwitch {
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    right: 5px;
+}
+
+#themeSwitch:hover {
+    cursor: pointer;
+}
+
+@keyframes switchThemeAnim {
+    0% {
+    }
+    20% {
+        transform: translateX(200px);
+        
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
+
+#chart {
+    margin-left: 20%;
+    margin-right: 20%;
+    margin-top: 7%;
+}
+
+.centerBtn {
+    text-align: center;
+}
+
+button:active {
+    transform: translateY(2px)
+}
+
+#searchBtn {
+    margin-top: 2rem;
+}
+
+#position {
+    display: flex;
+    justify-content: center;
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.1rem;
+    font-weight: bold;
+    margin-top: 1.5%;
+}
+
+#targetNumberLabel {
+    display: flex;
+    justify-content: center;
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.1rem;
+    font-weight: bold;
+    margin-top: 1.5%;
+}
+
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.targetNumberDarkmode {
+    background-color: white;
+    border: 0;
+    box-shadow: 0 0 .4vw rgba(0,0,0,0.5), 0 0 0 .15vw transparent;
+}
+
+.NumberChosen {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.input-group {
+    width: 20rem;
+}
+
+#targetNumber {
+    width: 200px;
+    color:white;
+    background-color: #343A40;
+    font-family: 'Roboto', sans-serif;
+}
+
+
+@media screen and (min-width:1000px) and (max-width:1650px) {
+    #position {
+        margin-top: 2%;
+    }
+    #chart {
+        margin-left: 15%;
+        margin-right: 15%;
+    }
+    #themeSwitch {
+        left: 94%;
+    }
+    #searchBtn {
+        width: 12%;
+    }
+}
+
+@media  screen and (min-width:600px) and (max-width:1000px) {
+    header ul li {
+        font-size: 1.1rem;
+    }
+    header ul li a {
+        padding-left: 15px;
+    }
+    #logo {
+        width: 40px;
+        height: 40px;
+    }
+    #companyName {
+        font-size: 1.4rem;
+    }
+    #position {
+        margin-top: 4%;
+    }
+    #chart {
+        margin-left: 8%;
+        margin-right: 8%; 
+        margin-top: 7rem;
+    }
+    #themeSwitch {
+        left: 90%;
+    }
+    #searchBtn {
+        width: 17%;
+    }
+}
+
+@media screen and (max-width:600px) {
+    #chart {
+        margin-top: 7rem;
+        margin-left: 2%;
+        margin-right: 2%;
+    }
+    header ul li {
+        display: none;
+    }
+    #searchBtn {
+        width: 30%;
+    }
+    #shuffleArray {
+        width: 30%;
+        margin-bottom: 6%;
+        margin-top: 25%;
+    }
+    #position {
+        margin-top: 10%;
+        font-size: 1rem;
+    }
+}
+
+/* @media (prefers-color-scheme: dark) {
+    body {
+        background-color: var(--darkModeBlack);
+        color: var(--darkModeText);
+    }
+    header {
+        background-color: var(--darkModeBlack);
+    }
+    header ul li a {
+        color: var(--darkModeText);
+    }
+    #searchBtn {
+        box-shadow: none;
+    }
+    #targetNumber {
+        background-color: rgb(12, 13, 14);
+        color: var(--darkModeText);
+        border: 0;
+        box-shadow: 0 0 .4vw rgba(0,0,0,0.5), 0 0 0 .15vw transparent;
+    }
+} */

@@ -1,0 +1,12 @@
+.btnStyle {
+    height: 3rem;
+    width: 8%;
+    border-radius: 23px;
+    background-color: #343A40;
+    color: white;
+    font-size: 1.25rem;
+    font-weight: 400;
+    box-shadow: 3px 3px 4px #979696;
+    border: 1px solid #343A40;
+    transition: 0.3s;
+}

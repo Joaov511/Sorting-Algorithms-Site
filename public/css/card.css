@@ -1,0 +1,15 @@
+.cardDiv {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.card {
+    margin-top: 6rem;
+    width: 70rem;
+    padding: 2rem;
+}
+
+.card ul {
+    margin-bottom: 2rem;
+}
