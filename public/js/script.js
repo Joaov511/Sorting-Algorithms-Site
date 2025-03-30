@@ -1,5 +1,8 @@
-import { fetchJSON } from './fetchJSON.js';
 import { initChart } from './chart.js';
+import { fetchJSON } from './utils.js';
+import { shuffle } from './utils.js';
+import { swap } from './utils.js';
+
 
 let array = await fetchJSON('../array.json');
 let numbers = array.numbers;
@@ -30,22 +33,18 @@ sortBtn.addEventListener('click',function() {
     }
 });
 
-function swap(array, i, k) {
-    const temp = array[i];
-    array[i] = array[k];
-    array[k] = temp;
-    return array;
-}
-
 async function colorChangingChart(position1,position2) {
-    chart.data.datasets[0].backgroundColor[position1] = 'rgba(255, 0, 0, 1)';
-    chart.data.datasets[0].backgroundColor[position2] = 'rgba(255, 0, 0, 1)';
+    const defaultColor = 'rgba(54, 162, 235, 0.8)';
+    const secondaryColor = 'rgba(255, 0, 0, 1)';
+    
+    chart.data.datasets[0].backgroundColor[position1] = secondaryColor;
+    chart.data.datasets[0].backgroundColor[position2] = secondaryColor;
     chart.update();
     
     await new Promise(resolve => setTimeout(resolve, 100));
     
-    chart.data.datasets[0].backgroundColor[position1] = 'rgba(54, 162, 235, 0.8)';
-    chart.data.datasets[0].backgroundColor[position2] = 'rgba(54, 162, 235, 0.8)';
+    chart.data.datasets[0].backgroundColor[position1] = defaultColor;
+    chart.data.datasets[0].backgroundColor[position2] = defaultColor;
     
     chart.update();
 }
@@ -105,17 +104,6 @@ rangeInput.addEventListener('input' , function()  {
     chart.data.datasets[0].data.backgroundColor = '#343A40';
     chart.update();
 })
-
-
-// Shuffle 
-function shuffle(array) {
-    for(let i = array.length - 1; i > 0; i--) {
-        let j = Math.floor(Math.random() * (i + 1));
-        let temp = array[i];
-        array[i] = array[j];
-        array[j] = temp;
-    }
-}
 
 shuffleBtn.addEventListener('click', function() {
     shuffle(newArray);

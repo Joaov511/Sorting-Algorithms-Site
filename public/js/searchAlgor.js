@@ -1,5 +1,6 @@
-import { fetchJSON } from './fetchJSON.js';
 import { initChart } from './chart.js';
+import { fetchJSON } from './utils.js';
+
 
 let array = await fetchJSON('../array.json');
 let newArray = array.sortedNumbers;
