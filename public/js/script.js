@@ -19,7 +19,6 @@ const rangeInput = document.getElementById('rangeInput');
 const rangeValue = document.getElementById('rangeValue');
 const bubbleSortText = document.getElementById('bubbleSort');
 const selectionSortText = document.getElementById('selectionSort');
-const moreAboutElements = document.getElementsByClassName('moreAbout');
 
 // Sorting and its methods
 sortBtn.addEventListener('click',function() {
@@ -84,6 +83,7 @@ async function selectionSort(array) {
                     await colorChangingChart(k,temp);
                     numberOfMoves.innerHTML = `Number of swaps : ${swaps}`;
                     swaps++;
+                    chart.update();
                 }
         }
     }
