@@ -2,7 +2,7 @@ import { initChart } from './chart.js';
 import { fetchJSON } from './utils.js';
 import { shuffle } from './utils.js';
 import { swap } from './utils.js';
-
+import { changeChartColumnColor } from './chart.js';
 
 let array = await fetchJSON('../array.json');
 let numbers = array.numbers;
@@ -36,15 +36,18 @@ async function colorChangingChart(position1,position2) {
     const defaultColor = 'rgba(54, 162, 235, 0.8)';
     const secondaryColor = 'rgba(255, 0, 0, 1)';
     
-    chart.data.datasets[0].backgroundColor[position1] = secondaryColor;
-    chart.data.datasets[0].backgroundColor[position2] = secondaryColor;
+/*  chart.data.datasets[0].backgroundColor[position1] = secondaryColor;
+    chart.data.datasets[0].backgroundColor[position2] = secondaryColor; */
+    changeChartColumnColor(chart,position1,secondaryColor)
+    changeChartColumnColor(chart,position2,secondaryColor)
     chart.update();
     
     await new Promise(resolve => setTimeout(resolve, 100));
     
-    chart.data.datasets[0].backgroundColor[position1] = defaultColor;
-    chart.data.datasets[0].backgroundColor[position2] = defaultColor;
-    
+/*  chart.data.datasets[0].backgroundColor[position1] = defaultColor;
+    chart.data.datasets[0].backgroundColor[position2] = defaultColor; */
+    changeChartColumnColor(chart,position1,defaultColor)
+    changeChartColumnColor(chart,position2,defaultColor)
     chart.update();
 }
 

@@ -14,3 +14,7 @@ export function initChart(array) {
     let chart = new Chart(canvas, config);
     return chart;
 }
+
+export function changeChartColumnColor(chart,position, color) {
+    chart.data.datasets[0].backgroundColor[position] = color;
+}

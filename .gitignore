@@ -1,5 +1,8 @@
 node_modules/
+public/node_modules/
 .firebase
 .firebaserc
 firebase.json
 firebase-debug.log
+apphosting.yaml
+apphosting.emulator.yaml

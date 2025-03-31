@@ -29,22 +29,32 @@ async function chartColorChange(position1,position2,position3) {
     const defaultColor = "rgba(54, 162, 235, 0.8)";
     
     if(position3 === 'undefined') {
-        chart.data.datasets[0].backgroundColor[position1] = secondaryColor;
-        chart.data.datasets[0].backgroundColor[position2] = secondaryColor;
+/*      chart.data.datasets[0].backgroundColor[position1] = secondaryColor;
+        chart.data.datasets[0].backgroundColor[position2] = secondaryColor; */
+        changeChartColumnColor(chart,position1,secondaryColor);
+        changeChartColumnColor(chart,position2,secondaryColor);
         chart.update();
         await new Promise(resolve => setTimeout(resolve, 400));
-        chart.data.datasets[0].backgroundColor[position1] = defaultColor;
-        chart.data.datasets[0].backgroundColor[position2] = defaultColor;
+/*      chart.data.datasets[0].backgroundColor[position1] = defaultColor;
+        chart.data.datasets[0].backgroundColor[position2] = defaultColor; */
+        changeChartColumnColor(chart,position1,defaultColor);
+        changeChartColumnColor(chart,position2,defaultColor);
     }
     else {
-        chart.data.datasets[0].backgroundColor[position1] = secondaryColor;
+/*      chart.data.datasets[0].backgroundColor[position1] = secondaryColor;
         chart.data.datasets[0].backgroundColor[position2] = secondaryColor;
-        chart.data.datasets[0].backgroundColor[position3] = secondaryColor;
+        chart.data.datasets[0].backgroundColor[position3] = secondaryColor; */
+        changeChartColumnColor(chart,position1,secondaryColor)
+        changeChartColumnColor(chart,position2,secondaryColor)
+        changeChartColumnColor(chart,position3,secondaryColor)
         chart.update();
         await new Promise(resolve => setTimeout(resolve, 400));
-        chart.data.datasets[0].backgroundColor[position1] = defaultColor;
+/*      chart.data.datasets[0].backgroundColor[position1] = defaultColor;
         chart.data.datasets[0].backgroundColor[position2] = defaultColor;
-        chart.data.datasets[0].backgroundColor[position3] = defaultColor;
+        chart.data.datasets[0].backgroundColor[position3] = defaultColor; */
+        changeChartColumnColor(chart,position1,defaultColor);
+        changeChartColumnColor(chart,position2,defaultColor);
+        changeChartColumnColor(chart,position3,defaultColor);
     }
 }
 
@@ -62,7 +72,7 @@ async function binarySearch(arr, x) {
         if (arr[mid] == x) {
             targetPosition.innerHTML = `Position of the target number on the Array: ${mid + 1}`;
         }
-        if (arr[mid] > x) {
+        else if (arr[mid] > x) {
             r = mid - 1;
         }
         else {
