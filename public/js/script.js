@@ -10,6 +10,8 @@ let max = 90;
 let newArray = numbers.slice(0,max);
 let isSortingRunning = false;
 const chart = initChart(newArray);
+const defaultColor = 'rgba(54, 162, 235, 0.8)';
+const secondaryColor = 'rgba(255, 0, 0, 1)';
 
 const sortBtn = document.getElementById('sortBtn');
 const numberOfMoves = document.getElementById('moves');
@@ -24,7 +26,7 @@ const selectionSortText = document.getElementById('selectionSort');
 sortBtn.addEventListener('click',function() {
     switch(sortType.value){
         case "Bubble Sort":
-            bubbleSort();
+            bubbleSort(newArray);
         break;
         case "Selection Sort": 
             selectionSort(newArray);
@@ -32,10 +34,7 @@ sortBtn.addEventListener('click',function() {
     }
 });
 
-async function colorChangingChart(position1,position2) {
-    const defaultColor = 'rgba(54, 162, 235, 0.8)';
-    const secondaryColor = 'rgba(255, 0, 0, 1)';
-    
+async function colorChangingChart(position1,position2) {    
 /*  chart.data.datasets[0].backgroundColor[position1] = secondaryColor;
     chart.data.datasets[0].backgroundColor[position2] = secondaryColor; */
     changeChartColumnColor(chart,position1,secondaryColor)
@@ -51,16 +50,16 @@ async function colorChangingChart(position1,position2) {
     chart.update();
 }
 
-async function bubbleSort() {
+async function bubbleSort(array) {
     if(isSortingRunning) return;
     
     isSortingRunning = true;
     let swaps = 0;
     
-    for(let i = 0; i < newArray.length - 1; i++) {
-        for(let k = 0; k < newArray.length - i - 1; k++) {
-                if(newArray[k] > newArray[k + 1]) {
-                    swap(newArray, k, k + 1);
+    for(let i = 0; i < array.length - 1; i++) {
+        for(let k = 0; k < array.length - i - 1; k++) {
+                if(array[k] > array[k + 1]) {
+                    swap(array, k, k + 1);
                     await colorChangingChart(k,k+1);
                     numberOfMoves.innerHTML = `Number of swaps : ${swaps}`;
                     swaps++;
@@ -104,7 +103,7 @@ rangeInput.addEventListener('input' , function()  {
     newArray = numbers.slice(0,max);
     chart.data.datasets[0].data = newArray;
     chart.data.labels = newArray;
-    chart.data.datasets[0].data.backgroundColor = '#343A40';
+    chart.data.datasets[0].data.backgroundColor = defaultColor;
     chart.update();
 })
 
