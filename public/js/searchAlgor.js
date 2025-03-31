@@ -1,10 +1,13 @@
 import { initChart } from './chart.js';
 import { fetchJSON } from './utils.js';
+import { randomNumberArray } from './utils.js';
 
 let array = await fetchJSON('../array.json');
 let newArray = array.sortedNumbers;
 const chart = initChart(newArray);
 let searchNumber = randomNumberArray(newArray);
+const secondaryColor = "rgba(255, 0, 0, 1)";
+const defaultColor = "rgba(54, 162, 235, 0.8)";
 
 const searchBtn = document.getElementById("searchBtn");
 const targetPosition = document.getElementById("position"); 
@@ -15,19 +18,11 @@ const targetNumberLabel = document.getElementById("targetNumberLabel");
 targetNumberLabel.innerHTML = `Selected target number for search : `;
 targetNumber.value = searchNumber;
 
-function randomNumberArray(newArray) {
-    let number = Math.round(Math.random() * 150);
-    return newArray[number];
-}
-
 searchBtn.addEventListener("click",function() {
     linearSearch(newArray,searchNumber);    
 });
 
 async function chartColorChange(position1,position2,position3) {
-    const secondaryColor = "rgba(255, 0, 0, 1)";
-    const defaultColor = "rgba(54, 162, 235, 0.8)";
-    
     if(position3 === 'undefined') {
 /*      chart.data.datasets[0].backgroundColor[position1] = secondaryColor;
         chart.data.datasets[0].backgroundColor[position2] = secondaryColor; */
@@ -82,8 +77,6 @@ async function binarySearch(arr, x) {
 }
 
 async function linearSearch(arr,x) {
-    const secondaryColor = "rgba(255, 0, 0, 1)";
-    const defaultColor = "rgba(54, 162, 235, 0.8)";
     for(let i = 0; i < arr.length; i++) {
         chart.data.datasets[0].backgroundColor[i] = secondaryColor;
         chart.update();
