@@ -19,3 +19,8 @@ export async function fetchJSON(filepath) {
     const data = await response.json();
     return data;
 }
+
+export function randomNumberArray(newArray) {
+    let number = Math.round(Math.random() * 150);
+    return newArray[number];
+}
